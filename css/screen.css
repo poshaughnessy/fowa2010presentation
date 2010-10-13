@@ -558,16 +558,63 @@ header {
   background: url(../i/papadums.jpg) no-repeat top left;
 }
 
-.slide.html5css3 {
+.slide.html5 {
   background: url(../i/documents.jpg) no-repeat top left;
 }
 
+.slide.css3 {
+  background: url(../i/cascade.jpg) no-repeat top left;
+}
+
 .slide.javascript {
+  background: url(../i/coffeebeans.jpg) no-repeat top left;
+}
+
+.slide.jquery {
   background: url(../i/ninja.jpg) no-repeat top left;
 }
 
-.slide.videosvg {
+.slide.video {
   background: url(../i/cameraman.jpg) no-repeat top left;
+}
+
+.video .framelandscape {
+  background: url(../i/framelandscape.png) no-repeat top left;
+  padding: 42px 44px 40px 35px;
+  margin: 60px auto 0;
+  width: 392px;
+  height: 331px;
+}
+
+.framelandscape a {
+  border: 0;
+}
+
+.slide.svg {
+  background: url(../i/vectorscene.jpg) no-repeat top left;
+}
+
+.svg .frame {
+  background: url(../i/frame.png) no-repeat top left;
+  padding: 41px 39px 39px 42px;
+  margin: 60px auto 0;
+  width: 331px;
+  height: 392px;
+}
+
+.frame a {
+  border: 0;
+}
+
+.slide.webgl {
+  background: url(../i/aquarium.jpg) no-repeat top left;
+}
+
+.webgl .demo {
+  margin: 70px auto 0;
+  width: 640px;
+  height: 373px;
+  opacity: 0.9;
 }
 
 .slide.theend {
@@ -577,10 +624,6 @@ header {
 .quoteScroller {
   width: 750px;
   background: transparent url(../i/speechbubble.png) top left no-repeat;
-  box-shadow: rgba(0, 0, 0, 0.7) 0 2px 5px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0 2px 5px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.7) 0 2px 5px;
-  -o-box-shadow: rgba(0, 0, 0, 0.7) 0 2px 5px; 
   padding: 20px;
   font-size: 2em;
   text-align: center;
