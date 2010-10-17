@@ -401,6 +401,11 @@ video {
   width: 50px;
 }
 
+.notes {
+  display: none;
+  whitespace: pre;
+}
+
 .slide.landing {
   background: url(../i/future.jpg) no-repeat top left;
 }
@@ -482,6 +487,60 @@ header {
   transform: rotate(-7deg);
   -webkit-transform: rotate(-7deg);
   -moz-transform: rotate(-7deg);
+}
+
+.contentSwitcher.hidden, 
+.contentAdder.hidden {
+  display: none;
+}
+
+.contentSwitcher .switchable, 
+.contentAdder .addable {
+  display: none;
+}
+
+.contentSwitcher .switchable.current, 
+.contentAdder .addable.shown {
+  display: block;
+}
+
+.contentSwitcher.standard {
+  height: 400px;
+  padding: 10px 0px;
+  margin-top: 100px;
+  background: #fff;
+  opacity: 0.95;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.7) 0 2px 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0 2px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.7) 0 2px 5px;
+  -o-box-shadow: rgba(0, 0, 0, 0.7) 0 2px 5px;  
+  font-family: helvetica;
+  text-align: center;
+  font-size: 1.6em;
+  text-shadow: rgba(0, 0, 0, 0.1) 0 2px 2px;
+}
+
+.contentSwitcher.withheading {
+  background: #fff url(../i/headingbackground.gif) repeat-x 0 0;
+}
+
+.contentSwitcher.withheading h3 {
+  color: #fff;
+  font-size: 1.3em;
+  padding-bottom: 8px;
+  margin: 0.7em 0;
+}
+
+.framelandscape a {
+  border: 0;
+}
+
+.frame a {
+  border: 0;
 }
 
 .slide.contents {
@@ -578,50 +637,7 @@ header {
   background: url(../i/cameraman.jpg) no-repeat top left;
 }
 
-.video .framelandscape {
-  background: url(../i/framelandscape.png) no-repeat top left;
-  padding: 42px 44px 40px 35px;
-  margin: 60px auto 0;
-  width: 392px;
-  height: 331px;
-}
-
-.framelandscape a {
-  border: 0;
-}
-
-.slide.svg {
-  background: url(../i/vectorscene.jpg) no-repeat top left;
-}
-
-.svg .frame {
-  background: url(../i/frame.png) no-repeat top left;
-  padding: 41px 39px 39px 42px;
-  margin: 60px auto 0;
-  width: 331px;
-  height: 392px;
-}
-
-.frame a {
-  border: 0;
-}
-
-.slide.webgl {
-  background: url(../i/aquarium.jpg) no-repeat top left;
-}
-
-.webgl .demo {
-  margin: 70px auto 0;
-  width: 640px;
-  height: 373px;
-  opacity: 0.9;
-}
-
-.slide.theend {
-  background: url(../i/armageddon.jpg) no-repeat top left;
-}
-
-.quoteScroller {
+.soundbites .contentSwitcher {
   width: 750px;
   background: transparent url(../i/speechbubble.png) top left no-repeat;
   padding: 20px;
@@ -632,22 +648,76 @@ header {
   opacity: 0.95;
   height: 160px;
 }
-.quoteScroller div {
-  display: none;
+.soundbites .contentSwitcher .switchable {
   padding-top: 17px;
   margin-top: 35px;
 }
-.quoteScroller div.current {
-  display: block;
-}
-.quoteScroller div.twoLines { /* Eugh, ugly... */
+.soundbites .contentSwitcher .twoLines { /* Eugh, ugly... */
   padding-top: 0;
 }
-.quoteScroller span {
+.soundbites .contentSwitcher span {
   color: #999;
   text-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px;
   font-size: 0.9em;
 }
-.quoteScroller q {
+.soundbites .contentSwitcher q {
   display: block;
 }
+
+.stack .contentSwitcher {
+}
+.stack .contentSwitcher ul {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5em;
+}
+
+.video .framelandscape {
+  background: url(../i/framelandscape.png) no-repeat top left;
+  padding: 42px 44px 40px 35px;
+  margin: 60px auto 0;
+  width: 392px;
+  height: 331px;
+}
+
+.slide.svg {
+  background: url(../i/vectorscene.jpg) no-repeat top left;
+}
+
+.svg .frame {
+  background: url(../i/frame.png) no-repeat top left;
+  padding: 41px 39px 39px 42px;
+  margin: 0 auto;
+  width: 331px;
+  height: 392px;
+}
+
+.svg .contentSwitcher {
+  margin: 50px auto 0;
+  height: 480px;
+  width: 460px;
+  background: transparent;
+  opacity: 0.95;
+  padding: 10px 0px;
+}
+
+.slide.webgl {
+  background: url(../i/aquarium.jpg) no-repeat top left;
+}
+
+.webgl .contentSwitcher {
+  background: #222;
+  width: 700px;
+  margin: 100px auto 0;
+}
+
+.webgl .demo {
+  margin: 10px auto 0;
+  width: 640px;
+  height: 373px;
+}
+
+.slide.theend {
+  background: url(../i/armageddon.jpg) no-repeat top left;
+}
+
