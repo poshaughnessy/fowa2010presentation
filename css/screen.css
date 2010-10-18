@@ -672,8 +672,13 @@ header {
   line-height: 1.5em;
 }
 
-.html5 .html5rocks {
+.html5 .contentSwitcher .switchable {
   margin: 50px auto 0;
+  width: 640px;
+  height: 480px;
+}
+
+.html5 .contentSwitcher .switchable img {
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -khtml-border-radius: 8px;
