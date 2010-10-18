@@ -672,6 +672,14 @@ header {
   line-height: 1.5em;
 }
 
+.html5 .html5rocks {
+  margin: 50px auto 0;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  -moz-border-radius: 8px;
+}
+
 .video .framelandscape {
   background: url(../i/framelandscape.png) no-repeat top left;
   padding: 42px 44px 40px 35px;
