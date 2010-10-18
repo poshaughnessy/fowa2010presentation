@@ -62,7 +62,9 @@
           <header>Soundbites</header>
           <section>
             <div class="contentSwitcher hidden">
-              <div class="switchable current"><q>The future of payment is mobile</q> <span>Naveed Anwar (Paypal)</span></div>
+	      <div class="switchable twoLines current"><q>The W3C are silly to say hold off on using HTML5. Just use progressive enhancement and test.</q> <span>Brad Neuberg (Google)</span></div>
+	      <div class="switchable"><q>CSS 2.1 isn't even a completed specification</q> <span>Molly Holzschlag</span></div>
+              <div class="switchable"><q>The future of payment is mobile</q> <span>Naveed Anwar (Paypal)</span></div>
               <div class="switchable"><q>You have to be like MacGuyver</q> <span>Sandy Jen (Meebo)</span></div>
               <div class="switchable"><q>Geolocation is where it's at</q> <span>Bruce Lawson (Opera)</span></div>
               <div class="switchable"><q>The future is in NoSQL solutions</q> <span>Nick Halstead (TweetMeme)</span></div>
@@ -120,19 +122,96 @@
           <header>HTML5</header>
           <section>
             <div class="contentSwitcher hidden">
-	      <div class="switchable current html5rocks">
-		<img src="i/html5rocks.jpg" alt="HTML5 rocks"/>
+	      <div class="switchable current html5gangsign">
+	        <img src="i/html5gangsign.jpg" alt="HTML5 gang sign" title="HTML5 gang sign"/>
+		<div class="caption">HTML5 Ghetto Hand Symbol</div>
               </div>
-	      <div class="switchable html5gangsign">
-	        <img src="i/html5gangsign.jpg" alt="HTML5 gang sign"/>
+	      <div class="switchable definition">
+		<q>A vocabulary and set of APIs ... for web sites and applications</q>
+		<div class="caption">65 Character Definition</div>
+              </div>
+	      <div class="switchable doctypehtml">
+		<img src="i/doctypehtml.png" alt="Doctype HTML" title="<!doctype html>"/>
+		<div class="caption">OMG, where's my DTD?</div>
+	      </div>
+	      <div class="switchable html5rocks">
+		<img src="i/html5rocks.jpg" alt="HTML5 rocks" title="HTML5 rocks"/>
+		<div class="caption">HTML5 Rocks</div>
+              </div>
+	      <div class="switchable justbecauseyoucan">
+		<img src="i/justbecauseyoucan.png" alt="Just because you can" title="Just because you can, doesn't mean you should"/>
+		<div class="caption">Sloppy syntax:&nbsp; just because you can, doesn't mean you should</div>
               </div>
 	    </div>
           </section>
+          <div class="notes">
+            HTML5 Doctype - "mostly useless, but required" - to trigger "standards mode" in common browsers
+          </div>
         </div>
 
         <div class="slide css3">
           <header>CSS3</header>
           <section>
+	    <div class="contentSwitcher hidden standard withheading">
+              <div class="switchable current">
+                <h3>Selectors</h3>
+                <ul>
+                  <li>:enabled</li>
+                  <li>:disabled</li>
+                  <li>:checked</li>
+		  <li>:last-child</li>
+		  <li>:nth-child(odd)</li>
+                </ul>
+              </div>
+              <div class="switchable">
+                <h3>Transforms</h3>
+                <ul>
+                  <li>Rotate</li>
+		  <li>Scale</li>
+		  <li>Translate</li>
+		  <li>Perspective</li>
+                </ul>
+              </div>
+              <div class="switchable browserspecific">
+                <h3>Browser-specific styles</h3>
+                <ul>
+                  <li>
+		    Use non-prefixed version ready for when it comes
+		    <div class="example">
+<strong>box-shadow:</strong> rgba(0, 0, 0, 0.7) 0 2px 5px;
+-webkit-box-shadow: rgba(0, 0, 0, 0.7) 0 2px 5px;
+-moz-box-shadow: rgba(0, 0, 0, 0.7) 0 2px 5px;
+-o-box-shadow: rgba(0, 0, 0, 0.7) 0 2px 5px;
+		    </div>
+		  </li>
+                </ul>
+              </div>
+	      <div class="switchable mediaqueries">
+		<h3>Media Queries</h3>
+		<ul>
+		  <li><q>Beware user agent sniffing - there are 125 known user agents</q></li>
+		  <li>
+		    <div class="example">
+@media handheld and (max-width: 480px),
+       screen and (max-device-width: 480px) {
+  ...
+}
+		    </div>
+		  </li>
+		</ul>
+              </div>
+	      <!-- TODO split into multiple pages -->
+              <div class="switchable">
+                <h3>Others...</h3>
+                <ul>
+                  <li>Multiple background images</li>
+                  <li>Border radius</li>
+                  <li>Text shadow</li>
+                  <li>Box shadow</li>
+		  <li>Multi-column layout</li>
+                </ul>
+              </div>
+            </div>
           </section>
         </div>
 
