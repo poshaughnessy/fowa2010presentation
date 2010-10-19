@@ -184,11 +184,6 @@ a {
   border-bottom: none;
 }
 
-li {
-  list-style: none;
-  padding: 10px 0;
-}
-
 button {
   font-size: 20px;
 }
@@ -289,13 +284,19 @@ pre input[type="range"] {
   cursor: pointer;
   width: auto;
 }
+
+.exampleintro {
+  margin-top: 2em;
+}
       
 .example {
   display: block;
   white-space: pre;
   font-family: courier;
   text-align: left;
-  color: #444;
+  color: #555;
+  margin-top: 2em;
+  line-height: 1.5em;
 }
       
 video {
@@ -538,6 +539,34 @@ header {
   border: 0;
 }
 
+ul {
+  line-height: 1.5em;
+  list-style-type: circle;
+  margin: 0 auto;
+  text-align: left;
+  width: 300px;
+}
+
+ul.wide {
+  width: 370px;
+}
+
+ul.thin {
+  width: 180px;
+}
+
+ul.thinner {
+  width: 160px;
+}
+
+ul.cssonly {
+  width: 80px;
+}
+
+li {
+  padding: 10px 0;
+}
+
 .slide.contents {
   background: url(../i/map.jpg) no-repeat top left;
 }
@@ -659,12 +688,6 @@ header {
   display: block;
 }
 
-.stack .contentSwitcher ul {
-  margin: 0;
-  padding: 0;
-  line-height: 1.5em;
-}
-
 .html5 .contentSwitcher {
   background: #222;
   width: 640px;
@@ -721,10 +744,42 @@ header {
   opacity: 0.9;
 }
 
-.css3 .contentSwitcher ul {
-  margin: 0;
+.css3 .transforms {
+  list-style-type: none;
+  width: 100%;
   padding: 0;
-  line-height: 1.5em;
+}
+
+.css3 .transforms a {
+  display: block;
+  height: 47px;  
+  text-decoration: none;
+  border: none;
+  margin: 0 auto;
+}
+
+.css3 .transforms a span {
+  display: none;
+}
+
+.css3 .transforms .rotateme {
+  width: 168px;
+  background: url(../i/rotateme.png);
+}
+
+.css3 .transforms .scaleme {
+  width: 168px;
+  background: url(../i/scaleme.png);
+}
+
+.css3 .transforms .translateme {
+  width: 201px;
+  background: url(../i/translateme.png);
+}
+
+.css3 .transforms .perspectiveme {
+  width: 168px;
+  background: url(../i/spinme.png);
 }
 
 .css3 .browserspecific .example {

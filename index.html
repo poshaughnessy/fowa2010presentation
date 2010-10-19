@@ -79,7 +79,7 @@
             <div class="contentSwitcher hidden standard withheading">
               <div class="switchable current">
                 <h3>Structure</h3>
-                <ul>
+                <ul class="thinner">
                   <li>HTML5</li>
                   <li>Microformats</li>
                   <li>ARIA</li>
@@ -87,7 +87,7 @@
               </div>
               <div class="switchable">
                 <h3>Presentation</h3>
-                <ul>
+                <ul class="cssonly">
                   <li>CSS</li>
                 </ul>
               </div>
@@ -100,7 +100,7 @@
               </div>
               <div class="switchable">
                 <h3>Media</h3>
-                <ul>
+                <ul class="wide">
                   <li>PNG, JPG, GIF</li>
                   <li>&lt;canvas&gt;</li>
                   <li>SVG</li>
@@ -155,7 +155,7 @@
 	    <div class="contentSwitcher hidden standard withheading">
               <div class="switchable current">
                 <h3>Selectors</h3>
-                <ul>
+                <ul class="thin">
                   <li>:enabled</li>
                   <li>:disabled</li>
                   <li>:checked</li>
@@ -165,147 +165,36 @@
               </div>
               <div class="switchable">
                 <h3>Transforms</h3>
-                <ul>
-                  <li><a href="#" class="rotateme">Rotate me</a></li>
-		  <li><a href="#" class="scaleme">Scale me</a></li>
-		  <li><a href="#" class="translateme">Translate me</a></li>
-		  <li><a href="#" class="perspectiveme">Change my perspective</a></li>
+                <script type="text/javascript" src="js/transformdemos.js"></script>
+                <ul class="transforms">
+                  <li><a href="#" class="rotateme"><span>Rotate me</span></a></li>
+		  <li><a href="#" class="scaleme"><span>Scale me</span></a></li>
+		  <li><a href="#" class="translateme"><span>Translate me</span></a></li>
+		  <li><a href="#" class="perspectiveme"><span>Spin me</span></a></li>
                 </ul>
-                <script type="text/javascript">
-
-		  var rotateInterval = null;
-		  var rotateDegrees = 0;
-
-		  var scaleInterval = null;
-		  var scaleValue = 1.0;
-		  var scaleForwards = true;
-
-		  var translateInterval = null;
-		  var translateX = 0;
-		  var translateForwards = true;
-                  var translateFinishing = false;
-
-                  $(function() {
-
-		    // Rotation
-		    $('.rotateme').click(function(event) {
-		      if( rotateInterval == null ) {
-                        rotateInterval = setInterval(
-                          function() {
-		            
-                            rotateDegrees += 3;
-                            
-                            $('.rotateme').css('-webkit-transform', 'rotate('+(rotateDegrees % 360)+'deg)' );
-		            
-                            // Finish after 1 rotation
-		            if( rotateDegrees >= 360 ) {
-                              clearTimeout(rotateInterval);
-		              rotateInterval = null;
-                              rotateDegrees = 0;
-		            }
-                          },
-                          1
-                        );
-		      }
-		      event.preventDefault();
-                    });
-
-		    // Scaling
-		    $('.scaleme').click(function(event) {
-		      if( scaleInterval == null ) {
-		        scaleInterval = setInterval(
-		          function() {
-
-                            if( scaleForwards ) { scaleValue += 0.1; }
-                            else { scaleValue -= 0.05; }
-
-		            $('.scaleme').css('-webkit-transform', 'scale('+(scaleValue)+')' );
-
-                            if( scaleForwards && scaleValue > 2.5 ) scaleForwards = false;
-		            else if( !scaleForwards && scaleValue <= 1.0 ) {
-                              // Finish after scaling up and down once
-                              clearTimeout(scaleInterval);
-                              scaleInterval = null;
-                              scaleValue = 1.0;
-                              scaleForwards = true;
-                            }
-		          },
-		          10
-		        );
-                      }
-                      event.preventDefault();
-		    });
-
-		    // Translation
-		    $('.translateme').click(function(event) {
-		      if( translateInterval == null ) {
-		        translateInterval = setInterval(
-		          function() {
-
-                            if( translateForwards ) { translateX += 3; }
-                            else { translateX -= 2; }
-
-		            $('.translateme').css('-webkit-transform', 'translateX('+translateX+'px)' );
-
-			    if( translateFinishing && translateForwards && translateX > 0 ) {
-
-                              // Finish after moving forwards, backwards, then back to the beginning
-                              clearTimeout(translateInterval);
-                              translateInterval = null;
-                              translateX = 0;
-                              translateFinishing = false;
-                              
-                            } else if( translateForwards && translateX > 100 ) {
-                              translateForwards = false;
-
-                            } else if( !translateForwards && translateX < -100 ) {
-                              translateForwards = true; 
-                              translateFinishing = true;
-                            }
-
-		          },
-		          10
-		        );
-                      }
-                      event.preventDefault();
-		    });
-
-                  });
-
-                </script>
               </div>
               <div class="switchable browserspecific">
                 <h3>Browser-specific styles</h3>
-                <ul>
-                  <li>
-		    Use non-prefixed version ready for when it comes
-		    <div class="example">
-<strong>box-shadow:</strong> rgba(0, 0, 0, 0.7) 0 2px 5px;
+                <div class="exampleintro">Use non-prefixed version ready for when it comes</div>
+		    <div class="example"><strong>box-shadow:</strong> rgba(0, 0, 0, 0.7) 0 2px 5px;
 -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0 2px 5px;
 -moz-box-shadow: rgba(0, 0, 0, 0.7) 0 2px 5px;
 -o-box-shadow: rgba(0, 0, 0, 0.7) 0 2px 5px;
 		    </div>
-		  </li>
-                </ul>
               </div>
 	      <div class="switchable mediaqueries">
 		<h3>Media Queries</h3>
-		<ul>
-		  <li><q>Beware user agent sniffing - there are 125 known user agents</q></li>
-		  <li>
-		    <div class="example">
-@media handheld and (max-width: 480px),
+		<div class="exampleintro"><q>Beware user agent sniffing - there are 125 known user agents</q></div>
+		    <div class="example">@media handheld and (max-width: 480px),
        screen and (max-device-width: 480px) {
   ...
 }
 		    </div>
-		  </li>
-		</ul>
               </div>
 	      <!-- TODO split into multiple pages -->
               <div class="switchable">
                 <h3>Others...</h3>
-                <ul>
+                <ul class="wide">
                   <li>Multiple background images</li>
                   <li>Border radius</li>
                   <li>Text shadow</li>
