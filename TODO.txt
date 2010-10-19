@@ -13,3 +13,5 @@ Add to CSS3 after transitions:
 
 Just because you can, doesn't mean you should (2) - use Geocities screenshot
 
+Add to CSS3 a bit about keyframes? (is this Safari only?)
+
