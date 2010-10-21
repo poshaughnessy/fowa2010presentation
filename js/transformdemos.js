@@ -63,17 +63,18 @@
 		    });
 
 		    // Translation
-		    $('.translateme').click(function(event) {
+		    $('.moveme').click(function(event) {
+
 		      if( translateInterval == null ) {
 		        translateInterval = setInterval(
 		          function() {
 
-                            if( translateForwards ) { translateX += 3; }
-                            else { translateX -= 2; }
+                            if( translateForwards ) { translateX += 10; }
+                            else { translateX -= 10; }
 
-		            $('.translateme').css('-webkit-transform', 'translateX('+translateX+'px)' );
+		            $('.moveme').css('-webkit-transform', 'translateX('+translateX+'px)' );
 
-			    if( translateFinishing && translateForwards && translateX > 0 ) {
+			    if( translateFinishing && translateForwards && translateX > -10 ) {
 
                               // Finish after moving forwards, backwards, then back to the beginning
                               clearTimeout(translateInterval);
@@ -81,10 +82,10 @@
                               translateX = 0;
                               translateFinishing = false;
                               
-                            } else if( translateForwards && translateX > 100 ) {
+                            } else if( translateForwards && translateX > 180 ) {
                               translateForwards = false;
 
-                            } else if( !translateForwards && translateX < -100 ) {
+                            } else if( !translateForwards && translateX < -180 ) {
                               translateForwards = true; 
                               translateFinishing = true;
                             }

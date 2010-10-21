@@ -734,9 +734,10 @@ li {
 }
 
 .html5 .justbecauseyoucan .example {
+  padding-top: 80px;
+  margin-top: 0;
   text-align: left;
   font-size: 2em;
-  padding-top: 80px;
 }
 
 .html5 .caption {
@@ -760,42 +761,34 @@ li {
   opacity: 0.9;
 }
 
-.css3 .transforms {
+.css3 .transforms2d {
   list-style-type: none;
   width: 100%;
   padding: 0;
 }
 
-.css3 .transforms a {
-  display: block;
-  height: 47px;  
+.css3 .transforms2d ul {
+  margin-top: 20px;
+}
+
+.css3 .transforms2d li {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.css3 .transforms2d a {
   text-decoration: none;
   border: none;
   margin: 0 auto;
-}
-
-.css3 .transforms a span {
-  display: none;
-}
-
-.css3 .transforms .rotateme {
-  width: 168px;
-  background: url(../i/rotateme.png);
-}
-
-.css3 .transforms .scaleme {
-  width: 168px;
-  background: url(../i/scaleme.png);
-}
-
-.css3 .transforms .translateme {
-  width: 201px;
-  background: url(../i/translateme.png);
-}
-
-.css3 .transforms .perspectiveme {
-  width: 168px;
-  background: url(../i/spinme.png);
+  color: #fff;
+  text-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px;
+  font-size: 1.2em;
+  padding: 10px 15px;
+  background: #333;
+  border-radius: 4px;
+  -webkit-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  -moz-border-radius: 8px;
 }
 
 .css3 .browserspecific .example {
