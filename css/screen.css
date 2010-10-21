@@ -573,6 +573,8 @@ li {
 .contents ul {
   font-size: 35px;
   margin-left: 200px;
+  list-style-type: none;
+  width: 100%;
 }
 .contents ul li {
   margin-bottom: 20px;
@@ -713,7 +715,8 @@ li {
   -moz-border-radius: 8px;
 }
 
-.html5 q {
+.html5 q,
+.html5 .example {
   color: #fefefe;
   text-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px;
   font-size: 2.4em;
@@ -721,6 +724,19 @@ li {
   text-align: center;
   line-height: 1.5em;
   padding: 150px 30px 0;
+}
+
+.html5 .doctypehtml .example {
+  padding-top: 180px;
+  text-shadow: rgba(0, 0, 0, 0.9) 0 3px 5px;
+  margin-top: 0;
+  font-size: 2.8em;
+}
+
+.html5 .justbecauseyoucan .example {
+  text-align: left;
+  font-size: 2em;
+  padding-top: 80px;
 }
 
 .html5 .caption {
