@@ -811,9 +811,11 @@ li {
   font-size: 0.6em;
   color: #666;
   height: 218px;
-  margin: 0 20px;
+  margin: 10px 20px 0;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: left;
+  line-height: 1.5em;
 }
 
 .css3 .multicolumndemo p {
