@@ -801,6 +801,35 @@ li {
   font-size: 0.95em;
 }
 
+.css3 .multicolumn input {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.css3 .multicolumndemo {
+  -webkit-column-count: 2;
+  font-size: 0.6em;
+  color: #666;
+  height: 218px;
+  margin: 0 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.css3 .multicolumndemo p {
+  margin: 0 0 1em;
+}
+
+.css3 .multicolumn .courtesy {
+  color: #aaa;
+  font-size: 0.5em;
+  margin-top: 15px;
+}
+
+.css3 .multicolumn .courtesy a {
+  border-bottom: 1px solid #aaa;
+}
+
 .video .framelandscape {
   background: url(../i/framelandscape.png) no-repeat top left;
   padding: 42px 44px 40px 35px;

@@ -196,7 +196,25 @@
 }
 		    </div>
               </div>
-	      <!-- TODO split into multiple pages -->
+	      <div class="switchable multicolumn">
+		<h3>Multi-column layout</h3>
+		<div>
+		  <script type="text/javascript">
+			function changeColumns(event) {
+			  var val = event.target.value;
+			  $('.multicolumndemo')[0].style.webkitColumnCount = val;
+			}
+		  </script>
+		  <input type="range" min="1" max="6" value="2" onchange="changeColumns(event)"/>
+		</div>
+		<div class="multicolumndemo">
+		 <p>Break yo neck, yall funky fresh its fo rizzle sit amizzle, hizzle adipiscing away. Fizzle sapizzle velit, ma nizzle volutpizzle, yo mamma quis, fo shizzle vizzle, sure. Pellentesque crackalackin tortizzle. Sizzle daahng dawg. Pot izzle dolor dapibizzle turpis tempizzle my shizz. Mauris sheezy dang fizzle turpizzle.</p>
+		 <p>Crazy in tortor. Pellentesque owned rhoncizzle doggy. Tellivizzle hizzle habitasse shizzlin dizzle dictumst. Its fo rizzle daahng dawg. Curabitizzle tellus urna, pretium eu, tellivizzle uhuh ... yih!, eleifend vitae, pimpin'. You son of a bizzle suscipizzle. Integer black velit sizzle check out this.</p>
+		 <p>Phasellizzle interdum volutpizzle tellizzle. Ut dizzle adipiscing bizzle. My shizz non est. Sure sapizzle massa, ultricizzle fo shizzle my nizzle, accumsizzle funky fresh, its fo rizzle that's the shizzle, sheezy. Duis nizzle we gonna chung. Nizzle pot bow wow wow ante. Pot pot. Vestibulizzle izzle go to hizzle varius nibh commodo commodo. Sizzle shiz dolor sizzle my shizz, consectetizzle pimpin' elit. Check it out izzle fizzle. Quisque for sure sizzle, sodalizzle boofron, dope a, eleifend a, elit.</p>
+		 <p>Fo shizzle my nizzle pharetra, leo check it out dapibizzle hendrerit, ipsum felizzle crunk own yo', shiz aliquizzle crackalackin felizzle luctizzle yo.</p>
+		</div>
+		<div class="courtesy">Text courtesy of <a href="http://www.lorizzle.nl/?feed=1">Gansta Lorem Ipsum</a></div>
+              </div>
               <div class="switchable">
                 <h3>Others...</h3>
                 <ul class="wide">
