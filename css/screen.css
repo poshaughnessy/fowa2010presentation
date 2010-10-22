@@ -832,6 +832,58 @@ li {
   border-bottom: 1px solid #aaa;
 }
 
+.css3 .experiment {
+  margin-top: 75px;
+  -webkit-perspective: 800; 
+  -webkit-perspective-origin: 50% 100px;
+}
+    
+.css3 .cube {
+  position: relative;
+  margin: 0 auto;
+  height: 200px;
+  width: 200px;
+  -webkit-transition: -webkit-transform 2s linear;
+  -webkit-transform-style: preserve-3d;
+}
+    
+.css3 .face {
+  position: absolute;
+  height: 40px;
+  width: 180px;
+  padding: 80px 10px;
+  background-color: rgba(50, 50, 50, 0.7);
+  font-size: 18px;
+  line-height: 1em;
+  color: #fff;
+  border: 1px solid #555;
+  -webkit-border-radius: 3px;
+}   
+
+.css3 .cube .one  {
+  -webkit-transform: rotateX(90deg) translateZ(100px);
+}
+
+.css3 .cube .two {
+  -webkit-transform: translateZ(100px);
+}
+ 
+.css3 .cube .three {
+  -webkit-transform: rotateY(90deg) translateZ(100px);
+}
+
+.css3 .cube .four {
+  -webkit-transform: rotateY(180deg) translateZ(100px);
+}
+
+.css3 .cube .five {
+  -webkit-transform: rotateY(-90deg) translateZ(100px);
+}
+
+.css3 .cube .six {
+  -webkit-transform: rotateX(-90deg) rotate(180deg) translateZ(100px) ;
+}
+
 .video .framelandscape {
   background: url(../i/framelandscape.png) no-repeat top left;
   padding: 42px 44px 40px 35px;
@@ -881,3 +933,13 @@ li {
   background: url(../i/armageddon.jpg) no-repeat top left;
 }
 
+.theend .credit {
+  color: #fff;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  text-shadow: rgba(0, 0, 0, 1.0) 0 3px 3px;
+  text-align: center;
+  width: 500px;
+  padding: 0 200px;
+}
