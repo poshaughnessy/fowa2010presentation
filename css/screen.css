@@ -761,19 +761,24 @@ li {
   opacity: 0.9;
 }
 
+.css3 .contentSwitcher {
+  height: 450px;
+  margin-top: 70px;
+}
+
 .css3 .transforms2d {
   list-style-type: none;
   width: 100%;
   padding: 0;
 }
 
-.css3 .transforms2d ul {
-  margin-top: 20px;
+.css3 ul.transforms2d {
+  margin-top: 50px;
 }
 
 .css3 .transforms2d li {
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
 }
 
 .css3 .transforms2d a {
@@ -789,6 +794,58 @@ li {
   -webkit-border-radius: 8px;
   -khtml-border-radius: 8px;
   -moz-border-radius: 8px;
+}
+
+.css3 .experiment {
+  margin-top: 85px;
+  -webkit-perspective: 800; 
+  -webkit-perspective-origin: 50% 100px;
+}
+    
+.css3 .cube {
+  position: relative;
+  margin: 0 auto;
+  height: 220px;
+  width: 220px;
+  -webkit-transition: -webkit-transform 2s linear;
+  -webkit-transform-style: preserve-3d;
+}
+    
+.css3 .face {
+  position: absolute;
+  height: 40px;
+  width: 200px;
+  padding: 90px 10px;
+  background-color: rgba(50, 50, 50, 0.7);
+  font-size: 18px;
+  line-height: 1em;
+  color: #fff;
+  border: 1px solid #555;
+  -webkit-border-radius: 3px;
+}   
+
+.css3 .cube .one  {
+  -webkit-transform: rotateX(90deg) translateZ(110px);
+}
+
+.css3 .cube .two {
+  -webkit-transform: translateZ(110px);
+}
+ 
+.css3 .cube .three {
+  -webkit-transform: rotateY(90deg) translateZ(110px);
+}
+
+.css3 .cube .four {
+  -webkit-transform: rotateY(180deg) translateZ(110px);
+}
+
+.css3 .cube .five {
+  -webkit-transform: rotateY(-90deg) translateZ(110px);
+}
+
+.css3 .cube .six {
+  -webkit-transform: rotateX(-90deg) rotate(180deg) translateZ(110px);
 }
 
 .css3 .browserspecific .example {
@@ -830,58 +887,6 @@ li {
 
 .css3 .multicolumn .courtesy a {
   border-bottom: 1px solid #aaa;
-}
-
-.css3 .experiment {
-  margin-top: 75px;
-  -webkit-perspective: 800; 
-  -webkit-perspective-origin: 50% 100px;
-}
-    
-.css3 .cube {
-  position: relative;
-  margin: 0 auto;
-  height: 200px;
-  width: 200px;
-  -webkit-transition: -webkit-transform 2s linear;
-  -webkit-transform-style: preserve-3d;
-}
-    
-.css3 .face {
-  position: absolute;
-  height: 40px;
-  width: 180px;
-  padding: 80px 10px;
-  background-color: rgba(50, 50, 50, 0.7);
-  font-size: 18px;
-  line-height: 1em;
-  color: #fff;
-  border: 1px solid #555;
-  -webkit-border-radius: 3px;
-}   
-
-.css3 .cube .one  {
-  -webkit-transform: rotateX(90deg) translateZ(100px);
-}
-
-.css3 .cube .two {
-  -webkit-transform: translateZ(100px);
-}
- 
-.css3 .cube .three {
-  -webkit-transform: rotateY(90deg) translateZ(100px);
-}
-
-.css3 .cube .four {
-  -webkit-transform: rotateY(180deg) translateZ(100px);
-}
-
-.css3 .cube .five {
-  -webkit-transform: rotateY(-90deg) translateZ(100px);
-}
-
-.css3 .cube .six {
-  -webkit-transform: rotateX(-90deg) rotate(180deg) translateZ(100px) ;
 }
 
 .video .framelandscape {
