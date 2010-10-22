@@ -7,6 +7,7 @@ body {
   position: absolute;
   left: 0px; top: 0px;
   color: #3f3f3f;
+  -webkit-font-smoothing: antialiased;
 }
 
 .presentation {
@@ -848,6 +849,19 @@ li {
   -webkit-transform: rotateX(-90deg) rotate(180deg) translateZ(110px);
 }
 
+.css3 .transforms3d .credit {
+  color: #aaa;
+  font-size: 0.5em;
+  margin-top: 15px;
+  position: absolute;
+  bottom: 85px;
+  right: 85px;
+}
+
+.css3 .transforms3d .credit a {
+  border-bottom: 1px solid #aaa;
+}
+
 .css3 .browserspecific .example {
   padding: 0 40px;
   font-size: 0.95em;
@@ -879,13 +893,13 @@ li {
   margin: 0 0 1em;
 }
 
-.css3 .multicolumn .courtesy {
+.css3 .multicolumn .credit {
   color: #aaa;
   font-size: 0.5em;
   margin-top: 15px;
 }
 
-.css3 .multicolumn .courtesy a {
+.css3 .multicolumn .credit a {
   border-bottom: 1px solid #aaa;
 }
 
