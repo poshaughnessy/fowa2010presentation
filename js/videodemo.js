@@ -167,7 +167,11 @@ function dropBomb(evt, obj){
 	}
 	var canvasX = posx-obj.offsetLeft;
 	var canvasY = posy-obj.offsetTop;
-	explode(canvasX, canvasY);
+  
+  // Added shotgun sound
+  $('#shotgun')[0].play();
+	
+  explode(canvasX, canvasY);
 }
 
 function Tile(){
