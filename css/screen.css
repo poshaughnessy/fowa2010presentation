@@ -911,6 +911,12 @@ li {
   height: 331px;
 }
 
+.videodemo {
+  position: relative;
+  top: -10px;
+  left: -100px;
+}
+
 .slide.svg {
   background: url(../i/vectorscene.jpg) no-repeat top left;
 }
@@ -940,12 +946,23 @@ li {
   background: #222;
   width: 700px;
   margin: 100px auto 0;
+  padding-bottom: 20px;
 }
 
 .webgl .demo {
   margin: 10px auto 0;
   width: 640px;
   height: 373px;
+}
+
+.webgl .link {
+  margin-top: 7px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.webgl .link a {
+  border-bottom: 1px solid #fff;
 }
 
 .slide.theend {

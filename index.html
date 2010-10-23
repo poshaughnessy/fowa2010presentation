@@ -46,7 +46,7 @@
         </div>
                 
         <div class="slide contents">
-          <header>Contents</header>
+          <header>Look ahead...</header>
           <section>
             <ul class="contentAdder hidden">
               <li class="addable current shown"><span class="soundbites">Soundbites</span></li>
@@ -157,7 +157,7 @@
 
         <div class="slide css3">
           <header>CSS3</header>
-          <section>
+          <section> 
 	    <div class="contentSwitcher hidden standard withheading">
               <div class="switchable current">
                 <h3>2D Transforms</h3>
@@ -168,7 +168,7 @@
 		  <li><a href="#" class="scaleme"><span>Scale me</span></a></li>
                 </ul>
               </div>
-              <div class="switchable transforms3d">
+             <div class="switchable transforms3d">
                 <h3>3D Transforms</h3>
                 <script type="text/javascript" src="js/3dtransformdemo.js"></script>
 	
@@ -270,12 +270,39 @@
         <div class="slide jquery">
           <header>JQuery</header>
           <section>
+	          <div class="contentSwitcher hidden standard withheading">
+              <div class="switchable current">
+                <h3>New features</h3>
+                <ul>
+                  <li></li>
+                </ul>
+              </div>
+              <div class="switchable">
+                <h3>JQuery Mobile</h3>
+                <ul>
+                  <li></li>
+                </ul>
+              </div>
           </section>
         </div>
 
         <div class="slide video">
           <header>Video</header>
           <section>
+            <script type="text/javascript" src="js/videodemo.js"></script>
+            <div class="videodemo">
+              <div style="display:none">
+		            <video id="sourcevid" autoplay="true" loop="true">
+			            <source src="http://craftymind.com/factory/html5video/BigBuckBunny_640x360.mp4" type="video/mp4"/>
+			            <source src="http://craftymind.com/factory/html5video/BigBuckBunny_640x360.ogv" type="video/ogg"/>
+		            </video>
+		            <canvas id="sourcecopy" width="640" height="360"></canvas>
+	            </div>
+              <canvas id="output" width="1000" height="600" onmousedown="dropBomb(event, this)" style="border: solid 5px #666666"></canvas>
+              <script type="text/javascript">
+                $(function() {videoInit();})
+              </script>
+            </div>
 <!--
             <div class="framelandscape"><a href="http://craftymind.com/factory/html5video/CanvasVideo.html"><img src="i/videoblowup.png" alt="Blowing up video"/></a></div>
 -->
@@ -319,6 +346,7 @@
                 <div class="demo">
                   <object width="622" height="373"><param name="movie" value="http://www.youtube.com/v/9pM9LBcKxK4?fs=1&amp;hl=en_US&amp;rel=0&amp;hd=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/9pM9LBcKxK4?fs=1&amp;hl=en_US&amp;rel=0&amp;hd=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="622" height="373"></embed></object>
                 </div>
+                <div class="link"><a onclick="javascript:window.open(this.href); return false;" href="http://webglsamples.googlecode.com/hg/aquarium/aquarium.html">Launch the awesomeness</a></div>
               </div>
             </div>
           </section>
