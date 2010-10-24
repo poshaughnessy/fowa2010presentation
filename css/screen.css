@@ -862,6 +862,27 @@ li {
   border-bottom: 1px solid #aaa;
 }
 
+.css3 .starwars div {
+  background: url(../i/stars.png) top left repeat;
+  margin-top: -23px;
+  height: 390px;
+  border-bottom-left-radius: 8px;
+  -moz-border-bottom-left-radius: 8px;
+  -khtml-border-bottom-left-radius: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  -moz-border-bottom-right-radius: 8px;
+  -khtml-border-bottom-right-radius: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+}
+
+.css3 .starwarslink {
+  margin-top: 130px;
+  color: #FCDF2B;
+  font-family: FranklinGothicDemiRegular, sans-serif;
+  border-bottom: 0;
+}
+
 .css3 .browserspecific .example {
   padding: 0 40px;
   font-size: 0.95em;
@@ -1006,6 +1027,16 @@ li {
 
 .slide.theend {
   background: url(../i/armageddon.jpg) no-repeat top left;
+}
+
+.theend section {
+  text-align: center;
+}
+
+.theend .questionmark {
+  font-size: 400px;
+  text-shadow: rgba(0, 0, 0, 0.9) -5px 5px 5px;  
+  color: #404040;
 }
 
 .theend .credit {

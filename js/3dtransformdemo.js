@@ -1,8 +1,7 @@
   
 var xAngle = 0, yAngle = 0;
 
-document.addEventListener('keydown', function(e)
-	{
+document.addEventListener('keydown', function(e) {
 		switch(e.keyCode)
 		{
 			
@@ -23,6 +22,10 @@ document.addEventListener('keydown', function(e)
 				break;
 		};
 		
-		$('.current .cube')[0].style.webkitTransform = "rotateX("+xAngle+"deg) rotateY("+yAngle+"deg)";	
+    if( $('current .cube').length > 0 ) {
+  		$('.current .cube')[0].style.webkitTransform = "rotateX("+xAngle+"deg) rotateY("+yAngle+"deg)";	
+    }
+
 	}, false);
+             
   	
