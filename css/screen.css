@@ -911,12 +911,6 @@ li {
   height: 331px;
 }
 
-.videodemo {
-  position: relative;
-  top: -10px;
-  left: -100px;
-}
-
 .slide.svg {
   background: url(../i/vectorscene.jpg) no-repeat top left;
 }

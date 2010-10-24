@@ -290,23 +290,25 @@
           <header>Video</header>
           <section>
             <script type="text/javascript" src="js/videodemo.js"></script>
-            <div class="videodemo">
-              <div style="display:none">
-		            <video id="sourcevid" autoplay="true" loop="true">
-			            <source src="http://craftymind.com/factory/html5video/BigBuckBunny_640x360.mp4" type="video/mp4"/>
-			            <source src="http://craftymind.com/factory/html5video/BigBuckBunny_640x360.ogv" type="video/ogg"/>
-		            </video>
-		            <canvas id="sourcecopy" width="640" height="360"></canvas>
-	            </div>
-              <canvas id="output" width="1000" height="600" onmousedown="dropBomb(event, this)" style="border: solid 5px #666666"></canvas>
-              <audio id="shotgun" src="media/shotgun.wav" autobuffer="autobuffer"/>
-              <script type="text/javascript">
-                $(function() {videoInit();})
-              </script>
+	          <div class="contentSwitcher hidden">
+              <div class="switchable current">
+                <div class="videodemo">
+                  <div style="display:none">
+		                <video id="sourcevid" autoplay="true" loop="true" audio="muted">
+			                <source src="http://craftymind.com/factory/html5video/BigBuckBunny_640x360.mp4" type="video/mp4"/>
+			                <source src="http://craftymind.com/factory/html5video/BigBuckBunny_640x360.ogv" type="video/ogg"/>
+		                </video>
+		                <canvas id="sourcecopy" width="640" height="360"></canvas>
+	                </div>
+                  <canvas id="output" width="830" height="500" onmousedown="dropBomb(event, this)"></canvas>
+                  <audio id="shotgun" src="media/shotgun.wav" autobuffer="autobuffer"/>
+                  <!--<div class="controls"><a href="stop">Stop</a></div>-->
+                  <script type="text/javascript">
+                    $(function() {videoInit();})
+                  </script>
+                </div>
+              </div>
             </div>
-<!--
-            <div class="framelandscape"><a href="http://craftymind.com/factory/html5video/CanvasVideo.html"><img src="i/videoblowup.png" alt="Blowing up video"/></a></div>
--->
           </section>
         </div>
 

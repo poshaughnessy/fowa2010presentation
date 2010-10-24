@@ -12,8 +12,7 @@ var TILE_HEIGHT = 24;
 var TILE_CENTER_WIDTH = 16;
 var TILE_CENTER_HEIGHT = 12;
 var SOURCERECT = {x:0, y:0, width:0, height:0};
-// TODO is it because these dimensions actually differ based on zoom level?
-var PAINTRECT = {x:0, y:0, width:1000, height:600};
+var PAINTRECT = {x:0, y:0, width:830, height:500};
 
 function videoInit(){
 	video = document.getElementById('sourcevid');
@@ -22,6 +21,9 @@ function videoInit(){
 	var outputcanvas = document.getElementById('output');
 	draw = outputcanvas.getContext('2d');
 	setInterval("processFrame()", 33);
+  // Peter: Added muting
+  video.volume = 0;
+  video.muted = true;
 }
 function createTiles(){
 	var offsetX = TILE_CENTER_WIDTH+(PAINTRECT.width-SOURCERECT.width)/2;
@@ -125,10 +127,6 @@ function processFrame(){
 
 function explode(x, y){
 
-  // Peter's hack
-  //x = x - 225;
-  //y = y - 75;
-
 	for(var i=0; i<tiles.length; i++){
 		var tile = tiles[i];
 		
@@ -157,6 +155,7 @@ function zindexSort(a, b){
 function dropBomb(evt, obj){
 	var posx = 0;
 	var posy = 0;
+
 	var e = evt || window.event;
 	if (e.pageX || e.pageY){
 		posx = e.pageX;
@@ -165,10 +164,16 @@ function dropBomb(evt, obj){
 		posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
 		posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
 	}
+
 	var canvasX = posx-obj.offsetLeft;
 	var canvasY = posy-obj.offsetTop;
+
+  // Peter: Fix for our particular positioning, i.e. being inside a slide
+  var slideOffset = $('#sourcevid').parents(".slide").offset();
+  canvasX -= slideOffset.left;
+  canvasY -= slideOffset.top;
   
-  // Added shotgun sound
+  // Peter: Added shotgun sound
   $('#shotgun')[0].play();
 	
   explode(canvasX, canvasY);
@@ -224,3 +229,4 @@ function copyPixel(sImageData, sx, sy, dImageData, dx, dy){
 	dImageData.data[dpos+2] = sImageData.data[spos+2]; //B
 	dImageData.data[dpos+3] = sImageData.data[spos+3]; //A
 }
+
