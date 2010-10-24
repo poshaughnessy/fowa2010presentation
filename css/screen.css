@@ -1011,11 +1011,24 @@ li {
 
 .svg .contentSwitcher {
   margin: 50px auto 0;
-  height: 480px;
-  width: 460px;
-  background: transparent;
-  opacity: 0.95;
-  padding: 10px 0px;
+  background: rgba(1, 1, 1, 0.8);
+  width: 640px;
+  height: 462px;
+  text-align: center;
+  padding: 30px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -khtml-border-radius: 15px;
+  -moz-border-radius: 15px;
+}
+
+.svg .mrt {
+  opacity: 1.0;
+  border: 0;
+}
+
+.svg .mrt img {
+  border: 0;
 }
 
 .slide.webgl {
