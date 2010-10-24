@@ -22,7 +22,7 @@ document.addEventListener('keydown', function(e) {
 				break;
 		};
 		
-    if( $('current .cube').length > 0 ) {
+    if( $('.current .cube').length > 0 ) {
   		$('.current .cube')[0].style.webkitTransform = "rotateX("+xAngle+"deg) rotateY("+yAngle+"deg)";	
     }
 

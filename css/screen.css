@@ -874,13 +874,33 @@ li {
   -moz-border-bottom-right-radius: 8px;
   -khtml-border-bottom-right-radius: 8px;
   -webkit-border-bottom-right-radius: 8px;
+  -webkit-perspective: 800;
+  -webkit-perspective-origin-x: 50%;
+  -webkit-perspective-origin-y: 100px;
+  overflow: hidden;
+}
+
+@-webkit-keyframes crawl {
+  0% { -webkit-transform:rotateX(80deg) translateZ(150px) translateY(350px);opacity:1;}
+  40% { -webkit-transform:rotateX(80deg) translateZ(150px) translateY(-340px);opacity:1;}
+  80% { -webkit-transform:rotateX(80deg) translateZ(150px) translateY(-1780px);opacity:0;}
+  100% { -webkit-transform:rotateX(80deg) translateZ(150px) translateY(-2500px);opacity:0;}
 }
 
 .css3 .starwarslink {
-  margin-top: 130px;
+  opacity: 0;
+  display: block;
   color: #FCDF2B;
   font-family: FranklinGothicDemiRegular, sans-serif;
   border-bottom: 0;
+	-webkit-animation:crawl 120s linear;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-delay:0s;
+	-webkit-transform-style:preserve-3d;
+  position: absolute;
+  bottom: 0px;
+  width: 800px;
+  font-size: 36px;
 }
 
 .css3 .browserspecific .example {

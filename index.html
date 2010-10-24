@@ -214,8 +214,21 @@
               <div class="switchable starwars">
                 <h3>Having said that...</h3>
                 <div>
-                  <a class="starwarslink" href="http://www.gesteves.com/experiments/starwars.html" onclick="javascript:window.open(this.href); return false;">... this is the best thing ever</a>
+                  <a class="starwarslink" href="http://www.gesteves.com/experiments/starwars.html" onclick="javascript:window.open(this.href); return false;">... Star Wars is always allowed</a>
                 </div>
+                <audio id="starwarsaudio" src="media/starwars.m4a" autobuffer="autobuffer"/>
+                <script type="text/javascript">
+                  var playedStarWars = false;
+                  function starWarsKeyHandle(e) {
+                    if( !playedStarWars && e.keyCode == 40 && $('.switchable.current .justbecauseyoucan2').length > 0 ) {
+                      setTimeout("document.getElementById('starwarsaudio').play()", 2000);
+                      playedStarWars = true;
+                    } else if( e.keyCode == 40 && $('.switchable.current .starwarslink').length > 0 )  {
+                      $('#starwarsaudio')[0].pause();
+                    }
+                  }
+                  document.addEventListener('keydown', function(e) { starWarsKeyHandle(e); }, false);
+                </script>
               </div>
               <div class="switchable">
                 <h3>Selectors</h3>
@@ -386,13 +399,13 @@
           <section>
               <div class="questionmark">?</span>
             <script type="text/javascript">
-              function handleKeys(e) {
+              function theEndKeyHandle(e) {
                 if( e.keyCode == 40 && $('.current .questionmark').length > 0 ) {
-                  // Begin question mark animation
-                  $('.theend .questionmark')[0].style.webkitTransform = "rotateX(90deg)";
+                  // TODO Begin question mark animation
+                  //$('.theend .questionmark')[0].style.webkitTransform = "rotateX(90deg)";
                 }
               }
-              document.addEventListener('keydown', function(e) { handleKeys(e); }, false);
+              document.addEventListener('keydown', function(e) { theEndKeyHandle(e); }, false);
             </script>
             <p class="credit">*Thanks to Google, whose Ninja-grade JavaScript code I lovingly ripped off from their "HTML5 Rocks" slides.</p>
           </section>
