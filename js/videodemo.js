@@ -21,9 +21,18 @@ function videoInit(){
 	var outputcanvas = document.getElementById('output');
 	draw = outputcanvas.getContext('2d');
 	setInterval("processFrame()", 33);
-  // Peter: Added muting
+  // Peter: Tried adding muting - doesn't seem to work all the time...
   video.volume = 0;
   video.muted = true;
+  // Peter: Adding play & pause controls
+  $('.videodemo .controls .play').click(function(event) {
+    video.play();
+    event.preventDefault();
+  });
+  $('.videodemo .controls .pause').click(function(event) {
+    video.pause();
+    event.preventDefault();
+  });
 }
 function createTiles(){
 	var offsetX = TILE_CENTER_WIDTH+(PAINTRECT.width-SOURCERECT.width)/2;

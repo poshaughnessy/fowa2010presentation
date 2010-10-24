@@ -294,18 +294,24 @@
               <div class="switchable current">
                 <div class="videodemo">
                   <div style="display:none">
-		                <video id="sourcevid" autoplay="true" loop="true" audio="muted">
-			                <source src="http://craftymind.com/factory/html5video/BigBuckBunny_640x360.mp4" type="video/mp4"/>
-			                <source src="http://craftymind.com/factory/html5video/BigBuckBunny_640x360.ogv" type="video/ogg"/>
+		                <video id="sourcevid" loop="true" audio="muted" controls="controls">
+			                <source src="media/BigBuckBunny_640x360.mp4" type="video/mp4"/>
+			                <source src="media/BigBuckBunny_640x360.ogv" type="video/ogg"/>
 		                </video>
 		                <canvas id="sourcecopy" width="640" height="360"></canvas>
 	                </div>
                   <canvas id="output" width="830" height="500" onmousedown="dropBomb(event, this)"></canvas>
-                  <audio id="shotgun" src="media/shotgun.wav" autobuffer="autobuffer"/>
-                  <!--<div class="controls"><a href="stop">Stop</a></div>-->
+                  <audio id="shotgun" src="media/shotgun.wav" autobuffer="autobuffer"></audio>
+                  <div class="controls"><a href="#" class="play">Play</a> <a href="#" class="pause">Pause</a></div>
                   <script type="text/javascript">
                     $(function() {videoInit();})
                   </script>
+                </div>
+              </div>
+              <div class="switchable videoforeverybody">
+                <h3>Video for everybody</h3>
+                <div>
+                  Write me...
                 </div>
               </div>
             </div>
