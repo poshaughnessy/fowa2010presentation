@@ -7,6 +7,10 @@ WebGL will only work on Mac OS 10.6 - so will either need to bring my laptop in 
 
 --
 
+Add about forms to HTML5 slide (e.g. validation)
+
+--
+
 Add to SVG slide:
 
 http://homepage.mac.com/chriswjohnson/automatons/rotating-spiral-1.svg
@@ -29,6 +33,10 @@ http://www.monocubed.com/?p=696
 
 -- 
 
+Add geolocation bit to "Other cool new stuff"?
+
+--
+
 'The End' slide
 
 Add scrolling credits?
@@ -40,6 +48,12 @@ Add an overall vision/summary slide just before 'The End'? Transition from Early
 --
 
 JavaScript
+
+ - include one line about difference between JavaScript and ECMAScript?
+ - Must include about applicationCache
+ - Also sessionStorage, localStorage
+ - Mention native drag & drop?
+ - Mention native getElementsByClassName?
 
 --
 

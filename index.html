@@ -108,7 +108,6 @@
                   <li>&lt;canvas&gt;</li>
                   <li>SVG</li>
                   <li>WebM, OGG, other open codecs</li>
-                  <li>SMIL</li>
                 </ul>
               </div>
             </div>
@@ -117,7 +116,8 @@
             Microformats - 
             ARIA - Accessibility for Rich Internet Apps
             JavaScript/ECMAScript - Scripting access to APIs
-            SMIL - Synchronized multimedia events
+	    ECMAScript is the standardised version of JavaScript - JavaScript & ActionScript are dialects
+            SMIL - Synchronized Multimedia Integration Language - pronounced 'smile' - multimedia events 
           </div>
         </div>
 
@@ -163,6 +163,16 @@
           <section> 
 	    <div class="contentSwitcher hidden standard withheading">
               <div class="switchable current">
+                <h3>Selectors</h3>
+                <ul class="thin">
+                  <li>:enabled</li>
+                  <li>:disabled</li>
+                  <li>:checked</li>
+		  <li>:last-child</li>
+		  <li>:nth-child(odd)</li>
+                </ul>
+              </div>
+              <div class="switchable">
                 <h3>2D Transforms</h3>
                 <script type="text/javascript" src="js/transformdemos.js"></script>
                 <ul class="transforms2d">
@@ -226,16 +236,6 @@
                   }
                   document.addEventListener('keydown', function(e) { starWarsKeyHandle(e); }, false);
                 </script>
-              </div>
-              <div class="switchable">
-                <h3>Selectors</h3>
-                <ul class="thin">
-                  <li>:enabled</li>
-                  <li>:disabled</li>
-                  <li>:checked</li>
-		  <li>:last-child</li>
-		  <li>:nth-child(odd)</li>
-                </ul>
               </div>
               <div class="switchable browserspecific">
                 <h3>Browser-specific styles</h3>
@@ -343,7 +343,19 @@
           <section>
             <script type="text/javascript" src="js/videodemo.js"></script>
 	    <div class="contentSwitcher hidden">
-              <div class="switchable current">
+              <div class="switchable videoforeverybody current">
+                <h3>Video for everybody</h3>
+                <div class="example">&lt;video width="640" height="360" controls&gt;
+  &lt;source src="kittehs.mp4" type="video/<strong>mp4</strong>" /&gt; &lt;!-- Webkit --&gt;
+  &lt;source src="kittehs.ogv" type="video/<strong>ogg</strong>" /&gt; &lt;!-- FF/Opera --&gt;
+  &lt;!-- Fallback to flash --&gt
+  &lt;object ... /&gt;
+&lt;/video&gt;
+
+&lt;a href="kittehs.mp4">Download&lt;/a&gt;
+                </div>
+              </div>
+              <div class="switchable">
                 <div class="videodemo">
                   <div style="display:none">
 		    <video id="sourcevid" loop="true" audio="muted" controls="controls">
@@ -360,12 +372,6 @@
                   </script>
                 </div>
               </div>
-              <div class="switchable videoforeverybody">
-                <h3>Video for everybody</h3>
-                <div>
-                  Write me...
-                </div>
-              </div>
             </div>
           </section>
         </div>
@@ -374,12 +380,26 @@
           <header>SVG</header>
           <section>
             <div class="contentSwitcher hidden">
-              <div class="switchable current">
+	      <div class="switchable svgintro current">
+		<h3>Scalable Vector Graphics</h3>
+		<ul class="xwide">
+		  <li>XML format for scalable 2D graphics</li>
+		  <li>Embed with &lt;embed&gt; or &lt;object&gt;</li>
+		  <li>Been around for ages, except ...</li>
+		  <li>HTML5 - inline with &lt;svg&gt;</li>
+		  <li>Similar result with &lt;canvas&gt; and JS</li>
+		</ul>
+              </div>
+	      <div class="switchable spiral">
+		<object data="media/rotating-spiral-1.svg" width="640px" height="462px" type="image/svg+xml"></object>
+              </div>
+	      <div class="switchable subliminal">
+		Buy Peter tea
+              </div>
+	      <div class="switchable">
                 <a class="mrt" href="http://www.anthonycalzadilla.com/i-twitty-the-fool/" target="_blank"><img src="i/mrtsvg.jpg" alt="Mr T likes SVG"/></a>
-                <!--<div class="frame"><a href="http://www.anthonycalzadilla.com/i-twitty-the-fool/" target="_blank"><img src="i/mrt.jpg" alt="Mr T"/></a></div>-->
               </div>
             </div>
-            </script>
           </section>
         </div>
 

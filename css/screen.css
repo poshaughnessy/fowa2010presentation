@@ -511,10 +511,6 @@ header {
   -moz-border-radius: 8px;
   -khtml-border-radius: 8px;
   -webkit-border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.7) 0 2px 5px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0 2px 5px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.7) 0 2px 5px;
-  -o-box-shadow: rgba(0, 0, 0, 0.7) 0 2px 5px;  
   text-align: center;
   font-size: 1.6em;
   text-shadow: rgba(0, 0, 0, 0.1) 0 2px 2px;
@@ -546,6 +542,14 @@ ul {
   margin: 0 auto;
   text-align: left;
   width: 300px;
+}
+
+ul.full {
+  width: 520px;
+}
+
+ul.xwide {
+  width: 500px;
 }
 
 ul.wide {
@@ -991,6 +995,11 @@ li.sms {
   background: url(../i/phoneicon.png) no-repeat 0 14px;
 }
 
+.video .videoforeverybody .example {
+  padding: 0 40px;
+  font-size: 0.76em;
+}
+
 .video .controls {
   text-align: center;
 }
@@ -1026,6 +1035,8 @@ li.sms {
   text-align: center;
   font-size: 1.6em;
   text-shadow: rgba(0, 0, 0, 0.1) 0 2px 2px;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
 }
 
 .video .videoforeverybody h3 {
@@ -1069,6 +1080,25 @@ li.sms {
   -moz-border-radius: 15px;
 }
 
+.svg .svgintro {
+  background: #fff;
+  height: 462px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -khtml-border-radius: 15px;
+  -moz-border-radius: 15px;
+  font-size: 1.6em;
+  text-shadow: rgba(0, 0, 0, 0.1) 0 2px 2px;
+}
+
+.svg .svgintro h3 {
+  font-size: 1.3em;
+  padding-top: 20px;
+  margin: 0 20px 1em;
+  font-weight: normal;
+  border-bottom: 2px solid #3F3F3F;
+}
+
 .svg .mrt {
   opacity: 1.0;
   border: 0;
@@ -1076,6 +1106,16 @@ li.sms {
 
 .svg .mrt img {
   border: 0;
+}
+
+.svg .spiral object {
+  background: #fff;
+}
+
+.svg .subliminal {
+  font-size: 3em;
+  color: #fff;
+  margin-top: 200px;
 }
 
 .slide.webgl {
