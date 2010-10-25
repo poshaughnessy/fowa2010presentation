@@ -1,41 +1,57 @@
 TODO
 ----
 
+NOTE:
+
+WebGL will only work on Mac OS 10.6 - so will either need to bring my laptop in or load up in Chromium
+
+--
+
 Add to SVG slide:
 
 http://homepage.mac.com/chriswjohnson/automatons/rotating-spiral-1.svg
 
 --
 
-Add to CSS3:
+Add to CSS3?
 
 http://anthonycalzadilla.com/css3-ATAT/index.html
 
 --
 
-Add to CSS3 after transitions:
-
-Just because you can, doesn't mean you should (2) - use Geocities screenshot
+Add to CSS3 a bit about keyframes animation? (is this Safari only?) - or just show my source from Star Wars demo?
 
 --
 
-Add to CSS3 a bit about keyframes? (is this Safari only?)
-
---
-
-Add to CSS3 after transitions slide … "Putting them together…"
-
-http://www.paulrhayes.com/2009-07/animated-css3-cube-interface-using-3d-transforms/
-
---
-
-Add orientation game to not sure where??
+Add orientation game to not sure where?? "Other cool new stuff"?
 
 http://www.monocubed.com/?p=696
 
+-- 
+
+'The End' slide
+
+Add scrolling credits?
+
 --
 
-CSS3 3D transform demo
+Add an overall vision/summary slide just before 'The End'? Transition from Early Web to Future Web?
 
-http://www.paulrhayes.com/experiments/cube-3d/index.html
+--
+
+JavaScript
+
+--
+
+JQuery
+
+--
+
+JQuery Mobile
+
+--
+
+Video for everybody
+
+--
 
