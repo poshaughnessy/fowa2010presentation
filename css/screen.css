@@ -673,6 +673,10 @@ li {
   background: url(../i/cameraman.jpg) no-repeat top left;
 }
 
+.slide.othercoolstuff {
+  background: url(../i/penguins.jpg) no-repeat top left;
+}
+
 .soundbites .contentSwitcher {
   width: 750px;
   background: transparent url(../i/speechbubble.png) top left no-repeat;
@@ -741,6 +745,18 @@ li {
   text-shadow: rgba(0, 0, 0, 0.9) 0 3px 5px;
   margin-top: 0;
   font-size: 2.8em;
+}
+
+.html5 .storageapis {
+  margin: 0;
+  font-size: 1.5em;
+  color: #fff;
+  width: 520px;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  line-height: 1.1em;
+  text-shadow: rgba(0, 0, 0, 0.9) 1px 3px 3px;
 }
 
 .html5 .justbecauseyoucan .example {
@@ -871,6 +887,8 @@ li {
   border-bottom: 1px solid #aaa;
 }
 
+.css3 .dontdothislink {font-size: 0.7em;}
+
 .css3 .starwars div {
   background: url(../i/stars.png) top left repeat;
   margin-top: -23px;
@@ -902,10 +920,10 @@ li {
   color: #FCDF2B;
   font-family: FranklinGothicDemiRegular, sans-serif;
   border-bottom: 0;
-	-webkit-animation:crawl 120s linear;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-delay:0s;
-	-webkit-transform-style:preserve-3d;
+  -webkit-animation:crawl 120s linear;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-delay:0s;
+  -webkit-transform-style:preserve-3d;
   position: absolute;
   bottom: 0px;
   width: 800px;
@@ -979,6 +997,23 @@ li {
   padding-left: 22px;
 }
 
+.javascript .audioapi h3 {
+  margin-bottom: 23px;
+}
+
+.javascript .audioapi .audioslideslink {
+  font-size: 0.65em;
+}
+
+.javascript .orientation .example {
+  font-size: 0.8em;
+  padding-left: 120px;
+}
+
+.javascript .orientation .orientationlink {
+  font-size: 0.65em;
+}
+
 li.calendar {
   background: url(../i/calendaricon.gif) no-repeat 0px 14px;
 }
@@ -993,6 +1028,46 @@ li.camera {
 
 li.sms {
   background: url(../i/phoneicon.png) no-repeat 0 14px;
+}
+
+.jquery p {
+  font-size: 0.85em;
+}
+
+.jquery .subheading {
+  padding-top: 20px;
+}
+
+.jquery .example {
+  padding: 0 40px 40px;
+  font-size: 0.95em;
+}
+
+.jquery .datastorage .example {
+  padding-left: 178px;
+}
+
+.jquery .datalinking .example {
+  padding-left: 234px;
+  font-size: 0.86em;
+}
+
+.jquery .templates .subheading {
+  padding-top: 10px;
+}
+
+.jquery .templates .example {
+  padding: 0 0 10px 50px;
+  line-height: 1em;
+  font-size: 0.85em;
+  margin-top: 40px;
+}
+
+.jquery .jquerymobile {
+  width: 445px;
+  padding-left: 275px;
+  background: url(../i/jquerymobile.jpg) top left no-repeat;
+  font-size: 0.9em;
 }
 
 .video .videoforeverybody .example {
@@ -1153,21 +1228,58 @@ li.sms {
   text-align: center;
 }
 
-.theend .questionmark {
-  font-size: 400px;
-  text-shadow: rgba(0, 0, 0, 0.9) -5px 5px 5px;  
-  color: #404040;
+.theend .credits {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -khtml-border-radius: 8px;
+  -moz-border-radius: 8px;
+  margin-top: 65px;
 }
 
-.theend .credit {
+.theend .credits h3 {
   color: #fff;
-  position: absolute;
-  bottom: 30px;
-  left: 0;
-  text-shadow: rgba(0, 0, 0, 1.0) 0 3px 3px;
-  text-align: center;
-  width: 500px;
-  padding: 0 200px;
+  font-size: 2em;
+  font-weight: normal;
+  padding-top: 30px;
+  border-bottom: 2px solid #fff;
+  width: 110px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.theend .credits .scroller {
+  padding: 0 40px;
+  height: 380px;
+  overflow: hidden;
+}
+
+@-webkit-keyframes creditscroll {
+  0% { -webkit-transform:translateY(380px);}
+  100% { -webkit-transform:translateY(-1000px);}
+}
+
+.theend .credits ul {
+  list-style-type: none;
+  width: 720px;
+  color: #fff;
+  -webkit-animation:creditscroll 60s linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-delay:0s;
+}
+
+.theend .credits ul h4 {
+  font-size: 1.4em;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.theend .credits ul p {
+  font-size: 1.05em;
+}
+
+.theend .credits a {
+  border-bottom: 2px solid #fff;
 }
 
 @font-face {

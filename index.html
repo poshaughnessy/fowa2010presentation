@@ -74,6 +74,9 @@
               <div class="switchable twoLines"><q>Just supporting the iPhone is akin to just supporting Internet Explorer</q> <span>John Resig (Mozilla)</span></div>
             </div>
           </section>
+	  <div class="notes">
+	    NoSQL - Cassandra
+	  </div>
         </div>
 
         <div class="slide stack">
@@ -133,13 +136,24 @@
 		<q>A vocabulary and set of APIs ... for web sites and applications</q>
 		<div class="caption">65 Character Definition</div>
               </div>
+<!--
 	      <div class="switchable doctypehtml">
 		<div class="example">&lt;!DOCTYPE HTML&gt;</div>
 		<div class="caption">OMG, where's my DTD?</div>
 	      </div>
+-->
 	      <div class="switchable html5rocks">
 		<img src="i/html5rocks.jpg" alt="HTML5 rocks" title="HTML5 rocks"/>
 		<div class="caption">HTML5 Rocks</div>
+              </div>
+	      <div class="switchable">
+		<div class="caption">Storage APIs</div>
+		<ul class="storageapis">
+		  <li>Application cache</li>
+		  <li>Local storage (session, persisted)</li>
+		  <li>Database storage (Web SQL)</li>
+		</ul>
+		<img class="catinstorage" src="i/catinstorage.jpg" alt="Cat in storage"/>
               </div>
 	      <div class="switchable justbecauseyoucan">
 		<div class="example">&lt;p&gt;KITTEH!!!!1
@@ -184,31 +198,28 @@
              <div class="switchable transforms3d">
                 <h3>3D Transforms</h3>
                 <script type="text/javascript" src="js/3dtransformdemo.js"></script>
-	
-	<div class="experiment">	
-		<div class="cube">
-	        <div class="face one">
-            wow
-	        </div>
-	        <div class="face two">
-            awesome
-	        </div>
-	        <div class="face three">
-            über cool
-	        </div>
-	        <div class="face four">
-            neat
-	        </div>
-	        <div class="face five">
-            wicked
-	        </div>
-	        <div class="face six">
-            sweet
-	        </div>
-	    </div>	
-	</div>	
-
-                <div class="credit">*Lovingly ripped off from www.paulrhayes.com</div>
+		<div class="experiment">	
+		  <div class="cube">
+	            <div class="face one">
+		      wow
+	            </div>
+	            <div class="face two">
+		      awesome
+	            </div>
+	            <div class="face three">
+		      über cool
+	            </div>
+	            <div class="face four">
+		      neat
+	            </div>
+	            <div class="face five">
+		      wicked
+	            </div>
+	            <div class="face six">
+		      sweet
+	            </div>
+		  </div>	
+		</div>	
               </div>
               <div class="switchable">
                 <h3>&ldquo;Just because you can...&rdquo; [part 2]</h3>
@@ -216,6 +227,9 @@
                   <img src="i/flying-horse.gif" alt="Flying horse" class="flyinghorse"/>
                   <img src="i/woman-warrior.gif" alt="Woman warrior" class="womanwarrior"/>
                   <img src="i/dancing-baby.gif" alt="Dancing baby" class="dancingbaby"/>
+		  <div>
+		    <a class="dontdothislink" onclick="javascript:window.open(this.href); return false;" href="http://wonder-tonic.com/geocitiesizer/content.php?theme=3&music=11&url=www.telegraph.co.uk">Don't do this!</a>
+		  </div>
                 </div>
               </div>
               <div class="switchable starwars">
@@ -315,6 +329,23 @@
                 </ul>
 		<p class="footer">Proposed Recommendation - 2011 Q2</p>
               </div>
+	      <div class="switchable audioapi">
+		<h3>Audio API</h3>
+		<video src="media/AudioAPI.mp4" controls="controls" width="580" height="300"></video>
+		<div><a class="audioslideslink" onclick="javascript:window.open(this.href); return false;" href="http://videos.mozilla.org/serv/blizzard/audio-slideshow/">Open me in Firefox 4 Beta</a></div>
+              </div>
+	      <div class="switchable orientation">
+		<h3>Device Orientation</h3>
+		<div class="example">window.addEventListener("deviceorientation", 
+  captureOrientation, false);
+
+function captureOrientation(e) {
+  betaVal = e.beta;
+  gammaVal = e.gamma;
+  ...
+}</div>
+		<div><a class="orientationlink" onclick="javascript:window.open(this.href); return false;" href="http://monocubed.com/doodles/orientation/2/">Open me in Chromium</a></div>
+              </div>
           </section>
         </div>
 
@@ -322,16 +353,40 @@
           <header>JQuery</header>
           <section>
 	    <div class="contentSwitcher hidden standard withheading">
-	      <div class="switchable current">
-                <h3>New features</h3>
-                <ul>
-                  <li>Write me...</li>
-                </ul>
+	      <div class="switchable current datastorage">
+                <h3>Internal data storage</h3>
+		<p class="subheading">To keep track of things - invisible to end users</p>
+		<div class="example">$('div').data('doingSomething');</div>
+		<p>Can hook into data change events</p>
+              </div>
+	      <div class="switchable datalinking">
+		<h3>Data linking</h3>
+		<p class="subheading">Map forms to objects & vice-versa</p>
+		<div class="example">$('form').link(user), {
+  firstName: "first-name",
+  lastName: "last-name"
+});</div>
+              </div>
+	      <div class="switchable templates">
+		<h3>Templating</h3>
+		<p class="subheading">Re-usable HTML templates
+		<div class="example">$.templates("ninjaTemplate", "&lt;li&gt;&lt;em&gt;${name}&lt;/em&gt;
+  (${belt})&lt;/li&gt" );
+
+var ninja = { name: "Peter", belt: "Black" };
+
+$.tmpl("ninjaTemplate", ninja).appendTo("#ninjaList");
+                </div>
+		<p>Can pull the data back out again</p>
               </div>
               <div class="switchable">
                 <h3>JQuery Mobile</h3>
-                <ul>
-                  <li>Write me...</li>
+                <ul class="xwide jquerymobile">
+                  <li>Touch-optimised mobile & tablet apps</li>
+		  <li>"All popular mobile devices"</li>
+		  <li>Progressive enhancement</li>
+		  <li>Themable</li>
+		  <li>Try it - jquerymobile.com/demos/1.0a1</li>
                 </ul>
               </div>
             </div>
@@ -384,8 +439,8 @@
 		<h3>Scalable Vector Graphics</h3>
 		<ul class="xwide">
 		  <li>XML format for scalable 2D graphics</li>
+		  <li>Been around for ages, except for ...</li>
 		  <li>Embed with &lt;embed&gt; or &lt;object&gt;</li>
-		  <li>Been around for ages, except ...</li>
 		  <li>HTML5 - inline with &lt;svg&gt;</li>
 		  <li>Similar result with &lt;canvas&gt; and JS</li>
 		</ul>
@@ -409,28 +464,60 @@
             <div class="contentSwitcher hidden standard">
               <div class="switchable current">
                 <div class="demo">
+		  <iframe class="youtube-player" type="text/html" width="622" height="373" src="http://www.youtube.com/embed/9pM9LBcKxK4" frameborder="0">
+		  </iframe>
+<!--
                   <object width="622" height="373"><param name="movie" value="http://www.youtube.com/v/9pM9LBcKxK4?fs=1&amp;hl=en_US&amp;rel=0&amp;hd=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/9pM9LBcKxK4?fs=1&amp;hl=en_US&amp;rel=0&amp;hd=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="622" height="373"></embed></object>
+-->
                 </div>
                 <div class="link"><a onclick="javascript:window.open(this.href); return false;" href="http://webglsamples.googlecode.com/hg/aquarium/aquarium.html">Launch the awesomeness</a></div>
               </div>
             </div>
           </section>
+	  <div class="notes">
+	    Can access and manipulate through JavaScript - hook into OpenGL
+	  </div>
         </div>
 
         <div class="slide theend">
           <header>The End</header>
           <section>
-              <div class="questionmark">?</span>
-            <script type="text/javascript">
-              function theEndKeyHandle(e) {
-                if( e.keyCode == 40 && $('.current .questionmark').length > 0 ) {
-                  // TODO Begin question mark animation
-                  //$('.theend .questionmark')[0].style.webkitTransform = "rotateX(90deg)";
-                }
-              }
-              document.addEventListener('keydown', function(e) { theEndKeyHandle(e); }, false);
-            </script>
-            <p class="credit">*Thanks to Google, whose Ninja-grade JavaScript code I lovingly ripped off from their "HTML5 Rocks" slides.</p>
+            <div class="contentSwitcher hidden">
+	      <div class="switchable credits current">
+    		<h3>Credits</h3>
+		<div class="scroller">
+		  <ul>
+		    <li><h4>Google</h4>
+		      <p>I craftily ripped off their Ninja-grade JavaScript from their <a href="http://www.html5rocks.com/">"HTML5 Rocks" slides</a>.</p>
+		    </li>
+		    <li><h4>Paul Hayes</h4>
+		      <p>I carefully ripped off the 3D spinning cube from <a href="http://www.paulrhayes.com/2009-07/animated-css3-cube-interface-using-3d-transforms/">his blog</a>.</p>
+		    </li>
+		    <li><h4>Joel Bez</h4>
+		      <p>I sneakily stole his HTML5 gang sign photo from <a href="http://www.flickr.com/photos/lejoe/4815687662/">Flickr</a>.</p>
+		    </li>
+		    <li><h4>Guillermo Esteves</h4>
+		      <p>I surreptitiously ripped off his Star Wars animation from <a href="http://www.gesteves.com/experiments/starwars.html">his website</a>.</p>
+		    </li>
+		    <li><h4>Sean Christmann</h4>
+		      <p>I brazenly ripped off his video explosion demo from <a href="http://www.craftymind.com/2010/04/20/blowing-up-html5-video-and-mapping-it-into-3d-space/">www.craftymind.com</a>.</p>
+		    </li>
+		    <li><h4>Chris Johnson</h4>
+		      <p>I ungratiously stole his SVG rotating spiral from <a href="http://www.chromeexperiments.com/detail/rotating-spiral/">his website</a>.</p>
+		    </li>
+		    <li><h4>Rich Spence and The Telegraph</h4>
+		      <p>For sending me to FOWA 2010.</p>
+		    </li>
+		    <li><h4>The FOWA speakers</h4>
+		      <p>For all their <a href="http://futureofwebapps.com/london-2010/videos/">inspiring talks</a>.</p>
+		    </li>
+		    <li><h4>Various others</h4>
+		      <p>I heartlessly grabbed my slide background images from various image rights holders using <a href="http://images.google.co.uk/">Google Image Search</a>.</p>
+		    </li>
+		  </ul>
+		</div>
+              </div>
+	    </div>
           </section>
         </div>
 

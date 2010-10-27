@@ -11,12 +11,6 @@ Add about forms to HTML5 slide (e.g. validation)
 
 --
 
-Add to SVG slide:
-
-http://homepage.mac.com/chriswjohnson/automatons/rotating-spiral-1.svg
-
---
-
 Add to CSS3?
 
 http://anthonycalzadilla.com/css3-ATAT/index.html
@@ -37,9 +31,17 @@ Add geolocation bit to "Other cool new stuff"?
 
 --
 
-'The End' slide
+Add link to Matrix in "Other cool stuff?"
 
-Add scrolling credits?
+--
+
+Add Firefox 4 beta videos to "Other cool stuff" - http://www.mozilla.com/en-US/firefox/4.0b6/whatsnew/
+
+--
+
+Add 3D video demo to video slide?
+
+http://www.craftymind.com/factory/html5video/CanvasVideo3D.html
 
 --
 
@@ -55,17 +57,5 @@ JavaScript
  - Mention native drag & drop?
  - Mention native getElementsByClassName?
 
---
 
-JQuery
-
---
-
-JQuery Mobile
-
---
-
-Video for everybody
-
---
 
