@@ -1,0 +1,61 @@
+TODO
+----
+
+NOTE:
+
+WebGL will only work on Mac OS 10.6 - so will either need to bring my laptop in or load up in Chromium
+
+--
+
+Add about forms to HTML5 slide (e.g. validation)
+
+--
+
+Add to CSS3?
+
+http://anthonycalzadilla.com/css3-ATAT/index.html
+
+--
+
+Add to CSS3 a bit about keyframes animation? (is this Safari only?) - or just show my source from Star Wars demo?
+
+--
+
+Add orientation game to not sure where?? "Other cool new stuff"?
+
+http://www.monocubed.com/?p=696
+
+-- 
+
+Add geolocation bit to "Other cool new stuff"?
+
+--
+
+Add link to Matrix in "Other cool stuff?"
+
+--
+
+Add Firefox 4 beta videos to "Other cool stuff" - http://www.mozilla.com/en-US/firefox/4.0b6/whatsnew/
+
+--
+
+Add 3D video demo to video slide?
+
+http://www.craftymind.com/factory/html5video/CanvasVideo3D.html
+
+--
+
+Add an overall vision/summary slide just before 'The End'? Transition from Early Web to Future Web?
+
+--
+
+JavaScript
+
+ - include one line about difference between JavaScript and ECMAScript?
+ - Must include about applicationCache
+ - Also sessionStorage, localStorage
+ - Mention native drag & drop?
+ - Mention native getElementsByClassName?
+
+
+

@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg id='root' width='100%' height='100%' viewBox='-800 -800 1600 1600' zoomAndPan='magnify' contentScriptType='text/ecmascript' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<!--
+
+Copyright 2008 Chris W. Johnson. <http://chriswjohnson.blogspot.com/>
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public 
+License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later 
+version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied 
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see 
+<http://www.gnu.org/licenses/>.
+
+-->
+
+<title>Rotating Spiral by Chris W. Johnson</title>
+<desc>Rotating Spiral, version 1.0 of 22-Aug-2008, 
+Copyright 2008 Chris W. Johnson. &lt;http://chriswjohnson.blogspot.com/&gt;</desc>
+
+<defs>
+	<style type='text/css'><![CDATA[
+		
+		svg {
+			fill: white;
+		}
+		
+		g#spiral path {
+			stroke: none;
+		    stroke-width: 0px;
+			fill: black;
+		}
+	
+	]]></style>
+</defs>
+
+<g id='spiral'></g>
+
+<script type='text/ecmascript'>
+<![CDATA[
+
+
+function SpiralTest(BBox, SegmentsPerRevolution) {
+	var MaxRadius         = Math.sqrt(BBox.width() * BBox.width() + BBox.height() * BBox.height()) * 1.5;
+	var DegreesPerSegment = 360 / SegmentsPerRevolution;
+	
+//	var SpiralFunction1   = new LogarithmicSpiral(1,   1.2, DegreesPerSegment);
+//	var SpiralFunction2   = new LogarithmicSpiral(1.7, 1.2, DegreesPerSegment);
+
+//	var SpiralFunction1   = new LogarithmicSpiral(1,   1.15, DegreesPerSegment);
+//	var SpiralFunction2   = new LogarithmicSpiral(1.9, 1.15, DegreesPerSegment);
+
+	var SpiralFunction1   = new LogarithmicSpiral(1,    1.15, DegreesPerSegment);
+	var SpiralFunction2   = new LogarithmicSpiral(1.59, 1.15, DegreesPerSegment);
+	
+//	var SpiralFunction1   = new LogarithmicSpiral(1,    1.1, DegreesPerSegment);
+//	var SpiralFunction2   = new LogarithmicSpiral(1.35, 1.1, DegreesPerSegment);
+
+//	var SpiralFunction1   = new LogarithmicSpiral(1,    1.05, DegreesPerSegment);
+//	var SpiralFunction2   = new LogarithmicSpiral(1.18, 1.05, DegreesPerSegment);
+		
+	var Points1      = [];
+	var Points1Index = 0;
+	var Points2      = [];
+	var Points2Index = 0;
+	
+	while (SpiralFunction1.getRadius() <= MaxRadius && SpiralFunction2.getRadius() <= MaxRadius) {
+		
+		Points1[Points1Index++] = new RPoint(toNDecimalPlaces(SpiralFunction1.getX(), 3), toNDecimalPlaces(SpiralFunction1.getY(), 3), toNDecimalPlaces(SpiralFunction1.getRadius(), 3));
+		Points2[Points2Index++] = new RPoint(toNDecimalPlaces(SpiralFunction2.getX(), 3), toNDecimalPlaces(SpiralFunction2.getY(), 3), toNDecimalPlaces(SpiralFunction2.getRadius(), 3));
+		
+		SpiralFunction1.advance();
+		SpiralFunction2.advance();
+	}
+	
+	var g         = document.getElementById('spiral');
+	var PrevPoint = null;
+	var CurPoint  = Points1[0];
+	var d         = "M" + CurPoint.X + "," + CurPoint.Y;
+	var Radius;
+	
+	for (Points1Index = 1; Points1Index < Points1.length; Points1Index++) {
+		
+		PrevPoint = CurPoint;
+		CurPoint  = Points1[Points1Index];
+		Radius    = toNDecimalPlaces((PrevPoint.R + CurPoint.R) / 2, 3);
+		
+		d += "A" + Radius + "," + Radius + " 0 0,1 " + CurPoint.X + "," + CurPoint.Y;
+	}
+
+	PrevPoint = null;
+	CurPoint  = Points2[Points2.length - 1];
+	
+	d += "L" + CurPoint.X + "," + CurPoint.Y;
+	
+	for (Points2Index = Points2.length - 1; --Points2Index >= 0; ) {
+		
+		PrevPoint = CurPoint;
+		CurPoint  = Points2[Points2Index];
+		Radius    = toNDecimalPlaces((PrevPoint.R + CurPoint.R) / 2, 3);
+		
+		d += "A" + Radius + "," + Radius + " 0 0,0 " + CurPoint.X + "," + CurPoint.Y;
+	}
+
+	var Path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+	Path.setAttribute('d', d + "z");
+	g.appendChild(Path);
+}
+
+
+function LogarithmicSpiral(a, b, DegreesIncrement) {
+	this.init(a, b, DegreesIncrement);
+}
+
+LogarithmicSpiral.prototype = {
+	
+	init : function(a, b, DegreesIncrement) {
+	
+		this.a = a;
+		this.b = b;
+		this.DegreesIncrement = DegreesIncrement;
+	
+		this.r     = 0;
+		this.θ     = 0;
+		this.Nextθ = 0;
+	},
+	
+	getAngle : function() {
+		return this.θ;	
+	},
+	
+	setAngle : function(Newθ) {
+		this.θ     = Newθ; 
+		this.Nextθ = Newθ;
+	},
+	
+	getAngleRadians : function() { 
+		return toRadians(θ);
+	},
+	
+	getRadius : function() {
+		return this.r;
+	},
+	
+	getX : function() { 
+		return this.r * Math.cos(toRadians(this.θ)); 
+	},
+	
+	getY : function() { 
+		return this.r * Math.sin(toRadians(this.θ)); 
+	},
+	
+	advance : function() {
+		
+		this.θ     = this.Nextθ;
+		this.r     = this.a * Math.pow(this.b, toRadians(this.θ));
+		this.Nextθ = this.θ + this.DegreesIncrement;
+	}
+}
+
+
+function RPoint(X, Y, R) {
+	this.X = X;
+	this.Y = Y;
+	this.R = R;
+}
+	
+
+function Rectangle(Top, Left, Bottom, Right) {
+	this.Top    = Top;
+	this.Left   = Left;
+	this.Bottom = Bottom;
+	this.Right  = Right;
+}
+
+Rectangle.prototype = {
+	
+	width : function() {
+		return this.Right - this.Left;
+	},
+	
+	height : function() {
+		return this.Bottom - this.Top;
+	},
+	
+	centerX : function() {
+		return this.Left + this.width() / 2;
+	},
+	
+	centerY : function() {
+		return this.Top + this.height() / 2;
+	},
+	
+	includes : function(X, Y) {
+	    return X >= this.Left && X < this.Right && Y >= this.Top && Y < this.Bottom;
+    }
+}
+
+
+function toRadians(Degrees) {
+	return Degrees * (Math.PI / 180.0);
+}
+
+	
+function toDegrees(Radians) {
+	return Radians * (180.0 / Math.PI);
+}
+
+
+function toNDecimalPlaces(Value, DecimalPlaces) {
+	
+	if (DecimalPlaces == 0)
+		return Math.round(Value);
+	
+	var Multiplier = Math.pow(10, DecimalPlaces);
+		
+	return Math.round(Value * Multiplier) / Multiplier;
+}
+
+
+function Rotator() {
+	
+	var Canvas     = document.getElementById("root");
+	var Spiral     = document.getElementById("spiral");
+	var Increment  = 5;
+	var Angle      = Increment;
+	var Rotating   = false;
+	var StartCount = 0;
+	var IntervalID;
+	
+	Canvas.addEventListener("click", toggle, false);
+	
+	this.toggle = toggle;
+	this.start  = start;
+	this.stop   = stop;
+	this.rotate = rotate;
+	
+	function toggle() {
+		
+		if (Rotating)
+			stop();
+		else
+			start();
+	}
+	
+	function start() {
+		Rotating = true;
+		StartCount++;
+		IntervalID = setInterval("TheRotator.rotate()", 15);
+	}
+	
+	function stop() {
+		clearInterval(IntervalID);
+		Rotating = false;
+	}
+	
+	function rotate() {
+		
+		if (StartCount % 2 != 0)
+			Angle = (Angle + Increment) % 360;
+		else
+			Angle = (Angle - Increment) % 360;
+		
+		Spiral.setAttribute("transform", "rotate(" + Angle + ")");
+	}
+}
+
+
+var TheSpiral  = new SpiralTest(new Rectangle(-800, -800, 800, 800), 36);
+var TheRotator = new Rotator();
+
+TheRotator.start();
+
+
+]]></script>
+
+
+<!-- Google Analytics hit-tracking script (rewritten to work inside SVG), because it's nice to know if people care: -->
+
+<script type="text/ecmascript"><![CDATA[
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+
+	makeRequest(gaJsHost + "google-analytics.com/ga.js", analyticsSetupProc);
+
+	function analyticsSetupProc(HTTPRequest) {
+		if (HTTPRequest.readyState == 4) {
+			if (HTTPRequest.status == 200) {
+				eval(HTTPRequest.responseText + "_gat._getTracker(\"UA-1102136-5\")._trackPageview();");
+			} else {
+				throw('There was a problem with the request. Status: ' + HTTPRequest.status + ". Message: " + HTTPRequest.responseText);
+			}
+		}
+	}
+		
+	function makeRequest(URL, CompletionProc) {
+		var httpRequest;
+	
+		if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+				
+			httpRequest = new XMLHttpRequest();
+			if (httpRequest.overrideMimeType)					
+				httpRequest.overrideMimeType('text/xml');
+				
+		} else if (window.ActiveXObject) { // IE
+				
+			try {
+				httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
+			} catch (e) {
+				try {
+					httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+				} catch (e) {}
+			}
+		}
+	
+		if (!httpRequest)
+			throw 'Cannot create an XMLHTTP instance';
+			
+		httpRequest.onreadystatechange = function() { CompletionProc(httpRequest); };
+		httpRequest.open('GET', URL, true);
+		httpRequest.setRequestHeader('Content-Type',      'application/x-www-form-urlencoded');
+		httpRequest.setRequestHeader('Cache-Control',     'no-cache');
+		httpRequest.setRequestHeader('If-Modified-Since', 'Wed, 1 Jan 1900 00:00:00 GMT');	//	Required to make Safari work. See <http://www.bitterpill.org/bp/2005-06/safari-xmlhttprequest-undefine.html>
+		httpRequest.send('');
+	}
+	
+]]></script>
+
+<!-- End of Google Analytics hit-tracking script. -->
+
+
+</svg>
